@@ -5,8 +5,11 @@
     --color-headings: #1b0760;
     --color-body: #918ca4;
 }
+
+/* Typography */
+
 html {
-    font-size: 62.5%;
+    font-size: 62.5%; 
 }
 
 body{
@@ -49,3 +52,33 @@ margin-top: 0;
     font-size: 2.4rem;
   }
 }
+
+
+/* Links */
+a {
+    text-decoration: none;
+}
+.link-arrow {
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bold;
+}
+ /* We need --> icon after the text Learn more, 
+ for that we'll use the psuedo selector 'after'. if this doesn't work, we can also use the icons &name; */
+
+ .link-arrow::after{
+    content: '-->';
+    margin-left: 5px; /* I want the margin space to not change wrt screen size hence, px is used*/
+    transition: margin 0.15s;/* To set the speed of hover effect. Here we are moving the margin hence used margin 0.15s*/
+ }
+
+ .link-arrow:hover::after{
+    margin-left: 10px; /*In this hover effect the arrow moves 5px to the right(diff b/w both margin- left)*/
+ }
+
+ @media screen  and (min-width: 1024px){
+    .link-arrow{
+        font-size: 1.5rem;
+    }
+ }
